@@ -1,0 +1,24 @@
+{
+  "name": "MoviesMarionette",
+  "version": "0.0.0",
+  "description": "Movie DB app written in Marionette",
+  "authors": [
+    "Gareth Nolan"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "marionette": "~2.2.2",
+    "momentjs": "~2.8.3",
+    "handlebars": "~2.0.0",
+    "fontawesome": "~4.2.0",
+    "bootstrap": "~3.3.1"
+  }
+}
