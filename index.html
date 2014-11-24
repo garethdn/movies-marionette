@@ -13,10 +13,35 @@
     <link rel="stylesheet" href="dist/styles/font-awesome.min.css.css">
   </head>
   <body>
+    <div class="navbar navbar-inverse navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <a href="#" class="navbar-brand">Movie App</a>
+          <button class="navbar-toggle" type="button" data-toggle="collapse" data-target="#navbar-main">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+        </div>
+        <div class="navbar-collapse collapse" id="navbar-main">
+          <ul class="nav navbar-nav">
+            <li><a href="#movies">Movies</a></li>
+            <li><a href="http://news.bootswatch.com">Blog</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="http://builtwithbootstrap.com/" target="_blank">Built With Bootstrap</a></li>
+            <li><a href="https://wrapbootstrap.com/?ref=bsw" target="_blank">WrapBootstrap</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="container">
+      <div id="header-region"></div>
+      <div id="main-region"></div>
+    </div>
+
     <script data-main="app/scripts/main.js" src="app/bower_components/requirejs/require.js"></script>
 
-    <div id="header-region"></div>
-    <div id="main-region"></div>
-    
   </body>
 </html>

@@ -6,7 +6,7 @@ module.exports = function(grunt) {
 
   var appConfig = {
     app     : 'app',
-    bower   : 'bower_components',
+    bower   : 'app/bower_components',
     dist    : 'dist',
     vendor  : 'dist/scripts/vendor'
   };

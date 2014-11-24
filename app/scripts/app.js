@@ -31,7 +31,7 @@ define(['marionette'], function(Marionette){
 
   App.on('start', function(){
     if (Backbone.history) {
-      require(["scripts/apps/movies/movies_app"], function () {
+      require(["scripts/apps/movies/movies_app", "scripts/apps/header/header_app"], function () {
         Backbone.history.start();
 
         if(App.getCurrentRoute() === ""){
