@@ -27,7 +27,7 @@ module.exports = function(grunt) {
         // the files to concatenate
         src: ['<%= appConfig.app %>/scripts/**/*.js'],
         // the location of the resulting JS file
-        dest: '<%= appConfig.dist %>/app.concat.js'
+        dest: '<%= appConfig.dist %>/scripts/app.concat.js'
       }
     },
 
@@ -40,8 +40,15 @@ module.exports = function(grunt) {
       },
       dist: {
         files: {
-          '<%= appConfig.dist %>.app.min.js': ['<%= concat.dist.dest %>']
+          '<%= appConfig.dist %>/scripts/app.min.js': ['<%= concat.dist.dest %>']
         }
+      }
+    },
+
+    watch: {
+      scripts: {
+        files: ['<%= appConfig.app %>/scripts/**/*.js'],
+        tasks: ['concat', 'uglify']
       }
     },
 
@@ -49,6 +56,7 @@ module.exports = function(grunt) {
       app: {
         files: [
           // vendor
+          { src: '<%= appConfig.bower %>/requirejs/require.js', dest: '<%= appConfig.vendor %>/require.js' },
           { src: '<%= appConfig.bower %>/jquery/dist/jquery.min.js', dest: '<%= appConfig.vendor %>/jquery.min.js' },
           { src: '<%= appConfig.bower %>/underscore/underscore.js', dest: '<%= appConfig.vendor %>/underscore.js' },
           { src: '<%= appConfig.bower %>/backbone/backbone.js', dest: '<%= appConfig.vendor %>/backbone.js' },
@@ -70,6 +78,6 @@ module.exports = function(grunt) {
     }
   });
 
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['watch']);
 
 };
