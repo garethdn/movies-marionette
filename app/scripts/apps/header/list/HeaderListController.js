@@ -1,22 +1,20 @@
-define(["scripts/app", "scripts/apps/header/list/HeaderListView"], function(App, View){
+define(["scripts/app", "scripts/apps/header/list/HeaderListView", "scripts/entities/Header"], function(App, View){
   App.module("HeaderApp.List", function(List, App, Backbone, Marionette, $, _){
     List.Controller = {
       listHeader: function(){
-        require(["entities/header"], function(){
-          var links = App.request("header:entities");
-          var headers = new View.Headers({collection: links});
+        var links = App.request("header:entities");
+        var headers = new View.Headers({collection: links});
 
-          headers.on("brand:clicked", function(){
-            App.trigger("contacts:list");
-          });
-
-          headers.on("childview:navigate", function(childView, model){
-            var trigger = model.get("navigationTrigger");
-            App.trigger(trigger);
-          });
-
-          App.headerRegion.show(headers);
+        headers.on("brand:clicked", function(){
+          App.trigger("contacts:list");
         });
+
+        headers.on("childview:navigate", function(childView, model){
+          var trigger = model.get("navigationTrigger");
+          App.trigger(trigger);
+        });
+
+        App.headerRegion.show(headers);
       },
 
       setActiveHeader: function(headerUrl){
